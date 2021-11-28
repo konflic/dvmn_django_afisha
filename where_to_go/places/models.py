@@ -20,8 +20,9 @@ class Coordinate(models.Model):
         return self.place.title
 
 
-class Images(models.Model):
+class Image(models.Model):
     image_name = models.TextField()
+    image_file = models.ImageField()
     place = models.ForeignKey(Place, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
